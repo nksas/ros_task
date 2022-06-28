@@ -17,10 +17,11 @@ Your world file is linked below
 [Night World file](https://github.com/nksas/ros_task/blob/main/aws-robomaker-racetrack-world/worlds/racetrack_night.world)
 
 
-
-
 import your robot model in the world and do necessary operation.
 
+## Outcome:
+
+The ebot should complete the racetrack by performing lane detection and following. You need to make use of poincloud and depth data provided by depth sensors and LiDAR for obstacle avoidance.
 
 
 ## Note: 
