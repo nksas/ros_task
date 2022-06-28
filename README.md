@@ -8,11 +8,15 @@ Your task is to utilize the ebot URDF file and aws_racetrack to perform autonomo
 
 Your URDF is linked below
 
-[URDF file](https://github.com/nksas/ros_task/ebot_description/urdf/ebot.xacro)
+[URDF file](https://github.com/nksas/ros_task/blob/main/ebot_description/urdf/ebot.xacro)
 
 Your world file is linked below
 
-[World file](https://github.com/nksas/ros_task/aws-robomaker-racetrack-world/racetrack_day.world)
+[DayLight World file](https://github.com/nksas/ros_task/blob/main/aws-robomaker-racetrack-world/worlds/racetrack_day.world)
+
+[Night World file](https://github.com/nksas/ros_task/blob/main/aws-robomaker-racetrack-world/worlds/racetrack_night.world)
+
+
 
 
 import your robot model in the world and do necessary operation.
