@@ -1,14 +1,14 @@
 # ROS_TASK
 
 
-Cool, now that you are planing to learn ROS ]
+Cool, now that you are planing to learn ROS. <br>
 Here is a task for you.
 
 Your task is to utilize the ebot URDF file and aws_racetrack to perform autonomous lane detection and navigation.
 
 Your URDF is linked below
 
-[World file](https://github.com/nksas/ros_task/ebot_description/urdf/ebot.xacro)
+[URDF file](https://github.com/nksas/ros_task/ebot_description/urdf/ebot.xacro)
 
 Your world file is linked below
 
