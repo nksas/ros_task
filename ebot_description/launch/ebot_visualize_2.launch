@@ -11,7 +11,7 @@
 
 <!--saving rviz configurations in a rviz folder-->
 
-    <node name="rviz" pkg="rviz" type="rviz" args=" -d $(find ebot_description)/rviz/visualize.rviz" />
+    <node name="rviz" pkg="rviz" type="rviz" args=" -d $(find ebot_description)/rviz/visualize_2.rviz" />
     
 <!--finds all of the non-fixed joints and publishes a JointState message-->
     <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" >
@@ -31,5 +31,11 @@
     <node name="mybot_spawn" pkg="gazebo_ros" type="spawn_model" output="screen" 
         args="-urdf -param robot_description -model ebot -x $(arg x) -y $(arg y) -z $(arg z)" />
 
+    <node
+        pkg="ebot_description"
+        type="webcam_sub.py"
+        name="webcam_sub"
+        output="screen"
+    />
 
 </launch>
