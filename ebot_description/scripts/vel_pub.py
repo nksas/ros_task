@@ -15,8 +15,8 @@ def increase(Twist):
   rate = rospy.Rate(5)
 
   # prompt the user for the acceleration value
-#   speed = float(input('By how much would \
-#   you like to accelerate? '))
+  speed = float(input('By how much would \
+  you like to accelerate? '))
 
   while not rospy.is_shutdown():
     
