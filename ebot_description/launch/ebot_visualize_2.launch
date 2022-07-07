@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+
+<!--including urdf model-->
+    <param name="robot_description" command="$(find xacro)/xacro '$(find ebot_description)/urdf/ebot.xacro'"/>
+<!--publish the state of the robot i.e. tf-->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+
+<!--runnning rviz node-->
+    <!--node name="rviz" pkg="rviz" type="rviz" /-->
+
+<!--saving rviz configurations in a rviz folder-->
+
+    <node name="rviz" pkg="rviz" type="rviz" args=" -d $(find ebot_description)/rviz/visualize_2.rviz" />
+    
+<!--finds all of the non-fixed joints and publishes a JointState message-->
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" >
+        <param name="use_gui" value="True" />
+    </node>
+
+<!-- empty gazebo world -->
+   <include file="$(find aws_robomaker_racetrack_world)/launch/racetrack.launch" /> 
+
+
+    <arg name="x" default="-5"/>
+    <arg name="y" default="15"/>
+    <arg name="z" default="0"/>
+        
+
+        <!-- Spawn the robot model -->
+    <node name="mybot_spawn" pkg="gazebo_ros" type="spawn_model" output="screen" 
+        args="-urdf -param robot_description -model ebot -x $(arg x) -y $(arg y) -z $(arg z)" />
+
+    <node
+        pkg="ebot_description"
+        type="webcam_sub.py"
+        name="webcam_sub"
+        output="screen"
+    />
+
+</launch>
